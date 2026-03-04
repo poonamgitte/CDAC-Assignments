@@ -1,0 +1,83 @@
+package org.shivam.web;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+
+@WebServlet("/createUserServlet")
+public class createUserServlet extends HttpServlet {
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
+		PrintWriter printWriter = response.getWriter();
+		printWriter.append("Server is running");
+	}
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+
+			PrintWriter printWriter = response.getWriter();
+			String username = request.getParameter("username");
+			String password = request.getParameter("password");
+			String confirm_password = request.getParameter("confirm_password");
+			String name = request.getParameter("name");
+			String email = request.getParameter("email");
+			String city = request.getParameter("city");
+
+			ResultSet resultSet = null;
+			Connection connection = DbConnection.getConnection();
+			try (PreparedStatement psd = connection.prepareStatement("select * from user_table where username = ?");) {
+
+				psd.setString(1, username);
+
+				resultSet = psd.executeQuery();
+
+				if (resultSet.next()) {
+					printWriter.append("Username should be unique!");
+					response.sendRedirect("/WebProjectDay4/createUser.html?msg='Username should be unique!'");
+				} else {
+					if (confirm_password.equals(password)) {
+						PreparedStatement psdInsert = connection
+								.prepareStatement("insert into user_table value (? , ? , ? , ? , ? , ?)");
+						psdInsert.setString(1, username);
+						psdInsert.setString(2, password);
+						psdInsert.setString(3, name);
+						psdInsert.setString(4, email);
+						psdInsert.setString(5, city);
+						psdInsert.setString(6, "user");
+
+						psdInsert.execute();
+
+						printWriter.append("User created successfully!");
+						response.sendRedirect("/WebProjectDay4/login.html?msg='User created successfully'");
+
+					} else {
+						printWriter.append("Password are not matching Please check!");
+						response.sendRedirect(
+								"/WebProjectDay4/createUser.html?msg='Password are not matching Please check!");
+					}
+				}
+
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+
+	}
+
+}

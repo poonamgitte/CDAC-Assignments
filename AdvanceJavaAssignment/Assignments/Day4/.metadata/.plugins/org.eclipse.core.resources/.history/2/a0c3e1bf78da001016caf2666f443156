@@ -1,0 +1,64 @@
+package org.shivam.web;
+
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+
+@WebServlet("/DeleteCategory")
+public class DeleteCategory extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		PrintWriter out = response.getWriter();
+		String categoryId = request.getParameter("id");
+		String username = request.getParameter("username");
+		String role = request.getParameter("role");
+		
+		
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			
+			ResultSet resultSet = null;
+			try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost/users", "root", "cdac")) {
+
+
+				if(role.equals("admin")) {
+					
+					System.out.println(categoryId);
+					PreparedStatement psd = connection.prepareStatement("delete from category where categoryId = ?");
+					psd.setString(1, categoryId);
+
+
+					resultSet = psd.executeQuery();
+					
+					if(resultSet.next()) {
+						   out.print("Deleted SUccesfully !");
+					}else {
+						 out.print("Failed to Delete !");
+					}
+				}else {
+					  out.print("Not Authorized !");
+				}
+				
+
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+	
+		 } catch (ClassNotFoundException e) {
+				e.printStackTrace();
+		 }
+		
+	}
+
+}

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Admin Page</title>
+
+<style>
+    .sidebar{
+         border : 1px solid gray;
+         padding: 20px;
+      }
+</style>
+
+<script>
+   const siderbar = document.getElementById("sidebar");
+   const category = document.getElementById("category");
+   const product = document.getElementById("product");
+   
+   function showAndHide(category , product , no){
+	       if(no === 0){
+	    	   category.style.display = 'none';
+	    	   product.style.display = 'block';
+	       }else{
+	    	   category.style.display = 'block';
+	    	   product.style.display = 'none';
+	       }
+   }
+
+
+</script>
+</head>
+<body>
+    <div>
+         <div id='sidebar'>
+               <button>Add Category</button>
+               <button>Add Product</button>
+               <a href='/WebProjectDay4/ShowCategory?username=cdac&role=admin'>Delete Category</a>
+         </div>
+         
+         <br><br><br>
+        <form id='category' action='Category' method='POST' enctype='multipart/form-data'>
+              <input type="text" name='catName' placeholder="Enter your Category Name"/>
+              <input type="text" name='catDesc' placeholder="Enter your Category Description"/>
+              <input type='file' name='file' placeholder="Select your file" />
+              <input type="submit" value="Add Category"/>
+         </form>
+         
+       <br><br><br>
+         
+          <form id='product' action='Product' method='post' enctype='multipart/form-data'>
+          		<select name='category'>
+          			<option>--select category--</option>
+          			<option value='1'>Electronics</option>
+          			<option value='2'>Clothes</option>
+          			<option value='3'>Shoes</option>
+          		</select>
+         
+              <input type="text" name='productName' placeholder="Enter your Product Name"/>
+              <input type="text"  name='productPrice' placeholder="Enter your Product Price"/>
+              <input type="text" name='productDescription' placeholder="Enter your Product Description"/>
+              <input type='file' name='file' placeholder="Select your file" />
+              <input type="submit" value="Add Product"/>
+         </form>
+         
+ 
+         
+    </div>
+</body>
+</html>

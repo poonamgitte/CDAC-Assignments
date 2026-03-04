@@ -1,0 +1,15 @@
+package com.boot.restapp.restLayredServicesApp;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class RestLayredServicesAppApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(RestLayredServicesAppApplication.class, args);
+	}
+
+}
+
+
