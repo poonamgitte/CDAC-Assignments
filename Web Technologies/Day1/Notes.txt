@@ -1,0 +1,137 @@
+html-> structure/layout
+CSS->Style
+CSS Library(Bootstrap)->
+Javascript
+JS Library(Jquery)
+Nodejs
+Express
+React
+React-redux
+
+backend       frontend
+server -----> client
+        ----->client
+c/c++          js
+java
+php
+python
+.net
+
+
+Flow:
+1.OPen Notepad write html code
+2.Save the file with .html extentsion
+3.OPen the file with browser
+
+HTML:
+->It is not a prgramming language(browser parses it)
+-> < > angualar bracket
+-> <TAGNAME> is called tag
+-> <TAGNAME> is opening tag, </TAGNAME> is closing tag 
+
+HTML -> First html tag, contains whole document
+HEAD -> meta data of web page
+TITLE -> PAGE TITLE
+BODY -> PAGE BODY
+h1 -> heading bigger
+h2 -> heading of little less than h1
+h3,h4,h5,h6
+p-> paragraph
+br -> line break(do not close this tag)
+List:
+two types of list:
+1.ordered list: numbered list
+ol -> tagname
+li -> list item
+2.unordered list: bullet based list
+ul -> tagname
+li -> list item
+hr -> horizontal line (do not close this tag)
+
+table -> creates the table
+tr -> table row
+td -> table cell
+input -> created input (do not close)
+
+
+example:
+
+1.Siddhant
+    -Physics
+    -Math
+2.Rajat
+    -Science
+    -Art
+______________________________
+Name      |  Email
+__________|__________________
+Siddhant  |  sid@gmail.com
+Rajat     |  rjt@gmail.com
+
+<table border=1>
+    <tr>
+        <td>Enter username</td>  
+        <td> [   ]</td></tr>
+    <tr>
+        <td>Enter name </td>
+        <td> [   ]<td>
+    </tr>
+</table>
+
+        request
+Server <-------   client
+        response  
+      ------> 
+
+request-response model
+
+types of communication models:
+1.request-response model:http-> ,websocket
+2.publisher subscriber model,mqtt,amqp
+pub ------>broker----->subscriber
+pub------>       ----->subs
+
+3.pull-push model
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

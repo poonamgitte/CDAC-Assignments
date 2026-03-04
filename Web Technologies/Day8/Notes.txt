@@ -1,0 +1,27 @@
+BOM -> Browser Object Model
+DOM -> document object model
+window.location -> get the url
+window.location.reload() -> reload the page
+window.location.pathName -> pathname
+window.history.back()
+window.history.forward()
+window.location.hash
+ 
+window: {
+    document : {
+        html : {
+            body: {
+                   .........
+                }
+        }
+}
+
+
+}
+
+var x= {}
+x.abc = 84783
+
+
+
+

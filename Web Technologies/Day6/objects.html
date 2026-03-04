@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      var obj = {
+        //property : value,
+        //property : value,
+        //.....
+        name: "Siddhant",
+        email: "sid@gmail.com",
+        age: 2389,
+      };
+
+      console.log(obj);
+      //access object
+      console.log(obj.name);
+      console.log(obj["email"]);
+
+      //insert property to the object
+      //obj.phone = "376738568736"
+      obj["phone"] = "5647645456";
+      console.log(obj);
+
+      //manipulate the property value
+      obj.name = "Sid";
+      console.log(obj);
+
+      //delete property from the object
+      delete obj.email;
+      console.log(obj);
+
+      var std1 = {
+        "Student Name": "Siddhant",
+        age: 23,
+        lang: ["Hindi", "English", "Marathi"],
+        address: {
+          city: "Pune",
+          pin: 327687,
+          location: {
+            house: 32,
+            building: "xyz",
+          },
+        },
+      };
+
+      std1["Student Name"];
+      std1["lang"][1];
+      std1["address"].location["house"];
+
+      var stds = [
+        { name: "Siddhant", email: "sid@gmail.com", address: { city: "Pune" }, lang : ["Hindi", "English"] },
+        { name: "Rajat", email: "sid@gmail.com", address: { city: "Pune" }, lang : ["Hindi", "English"] },
+        { name: "Anubhav", email: "sid@gmail.com", address: { city: "Pune" }, lang : ["Hindi", "English"] },
+        { name: "Neha", email: "sid@gmail.com", address: { city: "Pune" }, lang : ["Hindi", "English"] },
+      ];
+
+      stds[0]
+      stds[1].address.city
+      stds[1].lang[1]
+    </script>
+  </head>
+  <body></body>
+</html>

@@ -1,0 +1,28 @@
+RippleAI project 
+
+// Authentication and authorization
+
+Final Architecture Recommendation
+Authentication Flow for USER
+
+Enter email → Send OTP
+
+Verify OTP
+
+Set password
+
+Login (email + password)
+
+Authentication Flow for NGO
+
+Enter organization details → Send OTP
+
+Verify OTP
+
+Upload proof (optional)
+
+NGO profile goes to Admin for verification
+
+Admin Approves → NGO Activated
+
+NGO login works only after approval

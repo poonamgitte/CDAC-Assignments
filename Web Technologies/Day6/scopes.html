@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //global scope
+        var x = 100
+        let y = 300
+        const z = 400
+
+        function func(){
+            let y = 7687687;
+            var x = 54375;
+            console.log(y)
+            console.log(x)
+            var a = 100;
+            let b = 300;
+            const c = 400;
+            if(true){
+                let b = 5454;
+                var a = 65578;
+                var m = 300; // does not follow block scope
+                let n = 400; //follows the scope
+                const o = 5000; // follows the block scope
+            }
+
+            console.log(m)
+//            console.log(n)
+            //console.log(o)
+        }
+        func()
+        console.log(y)
+        console.log(x)
+    //console.log(a)
+    //console.log(b)
+    //console.log(c)
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

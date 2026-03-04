@@ -1,0 +1,15 @@
+Note: 
+1.Use the controlled component like state for each input tag in all questions
+2.Question 2 is compulsory
+
+1.Write react code to read movie data from user and show in table(Use different Component for table).
+Movie Fields : movieName, actor, release(date),Movie type(2d,3d,IMAX)(use checkbox), state(use select tag)
+
+2.Complete fruit code(Day14 Assignment Question 3) wixth Context.
+3.Complete Movies with context (Use my component structure)
+
+Optional:
+Connect the question 2 and 3 with backend api server
+
+
+

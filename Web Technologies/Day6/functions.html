@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+    
+        //normal
+        function sum(x,y){
+            let res = Number(x) + Number(y)
+            console.log(res)
+            return res
+        }
+        var res = sum(10) // y is going to be undefined
+
+        //anonymous function
+        var z = function(x,y){ // use it callback or pass as arg or assign to variable
+            let res = Number(x) + Number(y)
+            console.log(res)
+            return res
+        }
+        var res = z(10,30)
+
+        //arrow function : function without name
+        var sumFunc = (x,y) => { // use it callback or pass as arg or assign to variable
+            let res = Number(x) + Number(y)
+            console.log(res)
+            return res
+        }
+
+        var res = sumFunc(10,20)
+
+        var sumFunc = (x,y) =>  Number(x) + Number(y)
+        var res = sumFunc(10,20)
+        
+        var sumFunc = x =>  Number(x) + Number(x)
+        var res = sumFunc(10)
+    </script>
+</head>
+<body>
+    
+</body>
+</html> 

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        class Org{
+            constructor(orgName){
+                this.orgName = orgName
+            }
+            getTotalAge(){
+                return "Total Age"
+            }
+        }
+
+        class Student extends Org{
+            constructor(name,email,orgName){
+                super(orgName)
+                this.name = name
+                this.email = email
+            }
+            getTotalAge(arg){
+                return arg+"Child Total Age 2"
+            }
+            getTotalAge(){
+                return "Child Total Age 1"
+            }
+           
+        }
+        x = {_a:56}
+        var std1 = new Student("sid","s@gmail.com","CDAC")
+        var std2 = new Student("rajat","s@gmail.com","CDAC")
+        var std3 = new Student("anubhav","s@gmail.com","CDAC")
+        delete std1.email
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

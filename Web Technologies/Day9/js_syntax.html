@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var x= [32,34,43,45,56]
+        var arr = []
+        //32 ->
+        //34 ->
+        //43 -> 
+        // x.forEach(function(ele){
+        //     arr.push(ele**2)
+        // })
+
+        for(let ele of x){
+            arr.push(ele*2)
+        }
+
+        var obj = {
+            name : "sid",
+            email : "s@gmail.com"
+        }
+        console.log(Object.values(obj)) // returns array of values
+        var str = "" 
+        Object.values(obj).forEach(ele => {
+            str += " " + ele
+        })
+        console.log(Object.keys(obj)) // returns the array of keys
+        for(let key of Object.keys(obj)){
+            //obj[key]
+        }
+
+        var [a, b] = [10,20,30]
+        console.log(a)
+        console.log(b)
+
+        var {name:username,email:useremail} = {name : "sid", email : "s@gmail.com"}
+        console.log(username,useremail)
+
+        var phone = "28378237"
+        var city = "Pune"
+        var obj = {phone,city}
+        // {phone : "33433", city : "Pune"}
+
+        Object.entries(obj) // nested array of property value
+        // [["phone", "33433"], ["city", "Pune"]]
+        for(let ele of Object.entries(obj)){
+            //ele ["phone", "33433"]
+        }
+        for(let [key,value] of Object.entries(obj)){
+            //key "phone"
+            //value "33433"
+        }
+        Object.entries(obj).forEach(()=>{
+            //
+        })
+
+        var x = [1,2,4,4]
+        x = x.map(function(ele){
+            return ele **2
+        })
+        //1 -> 1
+        //2 -> 4
+        //4 -> 16
+        //4 -> 16
+        //[1,4,16,16]
+        var y = [2,3,5,7,6]
+        y = y.filter(function(ele){
+            return ele%2
+        })
+        // 2 -> 0 -> true
+        // 3 -> 1 -> false
+        // 5 -> 1 -> false
+        // 7 -> 1 -> false
+        // 6 -> 0 -> true
+        // [2,6]
+        
+
+        //Spread operator : ...
+        var x = [23,56,78]
+        var y = [89,90,x] // [89,90,[23,53,78]]
+        var y = [89,90,...x] // [89,90,23,53,78]
+        var y = [54,...x,89,90] // [23,53,78,89,90]
+
+        var x = [56,78]
+        x = [...x, 67]
+        var obj = {
+            name : "sid",
+            email : "s@gmail,com"
+        }
+        obj = {
+            ...obj,
+            phone : "367323"
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

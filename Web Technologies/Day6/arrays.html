@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var arr = [300, "Siddhant", true, 2398, "Rajat"]
+        console.log("Length of array", arr.length)
+        console.log("includes", arr.includes("Siddhant"))
+        // insert at the end
+        arr.push(36573)
+        console.log(arr) 
+        //insert at the begining
+        arr.unshift("Anubhav")
+        console.log(arr)
+  
+        //remove from the end
+        arr.pop()
+        console.log(arr)
+        //remove from the begining
+        arr.shift()
+        console.log(arr)
+
+        //delete from middle
+        arr.splice(1,2)
+        console.log(arr)
+    
+        //reverse the array
+        arr.reverse() // reverse the main array
+        console.log(arr)
+
+        console.log(arr.join(" ")) // creates a string by joining all element
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

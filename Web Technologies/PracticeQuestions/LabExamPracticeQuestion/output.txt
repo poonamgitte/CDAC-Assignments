@@ -1,0 +1,4 @@
+1,2,3,4,5
+Square array: 1 4 9 16 25  
+Sum of Square of array: 55 
+Average of array: 3 

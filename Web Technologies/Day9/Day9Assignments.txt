@@ -1,0 +1,38 @@
+Note : Complete below question by Jquery
+____________________________Section A__________________________________
+1.Create a web page and take 3 Movies details  and show in table (Use bootstrap)
+Movies property : Movie Name,Price,Seat
+
+2.Write js code to read movie data from user and show in table(use bootstrap)
+Movie Fields : movieName, actor, release,Movie type(2d,3d,IMAX)(use checkbox), language(Use radio button), show time(Use input type=datetime-local)
+
+
+____________________________Section B______________________________
+1.Write js code to read movie data from user and show in table(use bootstrap) and apply following validation
+Movie Fields : movieName, actor, release,Movie type(2d,3d,IMAX)(use checkbox), language(Use radio button), show time(Use input type=datetime-local)
+a)Movie Name must be of at least 5 characters 
+b)Actor name must be of at 3 chars
+
+2.Use Day 2 Assignment Quation 10 Pizzashop and  show data in table(Use bootstrap) and apply following validation
+a)Name must be 5 chars
+b)If Tomato Pizza sauce is selected then the user cannot select Supreme Pizza toppings
+c)Delivery Instruction must have at least 5 words
+
+______________________Section C_________________________
+1.Create a Task list using jquery. User should be able add, remove the task from the list.
+2.Count the number of characters written by user in textarea using jquery.
+
+______________________Section D__________________________
+1. Implementing Inheritance with Prototypes
+Task:
+->Write a constructor function named Person that accepts two parameters: name and age.
+->Add a method greet on Person.prototype that returns "Hello, I'm <name>!".
+->Write another constructor function called Student that inherits from Person and accepts an additional parameter subject.
+->Add a method study on Student.prototype that returns "<name> is studying <subject>.".
+->Ensure that Student inherits the greet method from Person using prototype inheritance.
+Note : Implement this first without using ES6 class syntax and then try with class syntax in second code. 
+
+
+
+
+

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      function getSum(event) {
+        event.preventDefault();
+        var num1 = document.getElementById("num1").value;
+        var num2 = document.getElementById("num2").value;
+        var obj = {
+          num1: num1,
+          num2: num2,
+        };
+        //send data to the server
+        //returns the promises
+        fetch("/sum", {
+          method: "POST",
+          body: JSON.stringify(obj),
+          headers: {
+            "Content-Type": "application/json",
+          },
+        })
+          .then((res) => res.json()) // /json(returing the promise)
+          .then((data) => {
+            console.log(data);
+            document.getElementById("result").innerHTML =
+              "Result is " + data.result;
+          })
+          .catch((err) => {
+            console.log(err);
+          });
+      }
+
+      function saveName(event){
+        event.preventDefault()
+        var name = document.getElementById("name").value
+        var data = {
+            name:name
+        }
+
+        fetch("/save",{
+            method : "POST",
+            body: JSON.stringify(data),
+            headers: {
+                "Content-Type": "application/json"
+            }
+        }).then(res => res.json())
+        .then(data => {
+            console.log(data)
+        }).catch(err => {
+            console.log(err)
+        })
+
+      }
+
+    </script>
+  </head>
+  <body>
+    <form id="calcForm">
+      Enter Number : <input type="text" name="num1" id="num1" /><br />
+      Enter Number : <input type="text" name="num2" id="num2" /><br />
+      <button>Sum</button>
+    </form>
+    <span id="result"></span>
+    <form id="nameForm">
+        Enter name<input type="text" id="name">
+        <button>Save</button>
+    </form>
+    <script>
+      document.getElementById("nameForm").addEventListener("submit", saveName);
+      document.getElementById("calcForm").addEventListener("submit", getSum);
+    </script>
+  </body>
+</html>

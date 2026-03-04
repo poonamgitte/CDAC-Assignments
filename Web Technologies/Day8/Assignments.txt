@@ -1,0 +1,30 @@
+Note :Section A Question 2 and Section B Question 2 is compulsory. Use form level validation for section A
+
+______________________________________________Section A_______________________________________________
+1.Write js code to read movie data from user and show in table(use bootstrap) and apply following validation
+Movie Fields : movieName, actor, release,Movie type(2d,3d,IMAX)(use checkbox), language(Use radio button), show time(Use input type=datetime-local)
+a)Movie Name must be of at least 5 characters 
+b)Actor name must be of at 3 chars
+
+2.Use Day 2 Assignment Question 10 Pizzashop and  show data in table(Use bootstrap) and apply following validation
+a)Name must be 5 chars
+b)If Tomato Pizza sauce is selected then the user cannot select Supreme Pizza toppings
+c)Delivery Instruction must have at least 5 words
+
+________________________________________________Section B________________________________________________
+Note: Try with hard code data in JS
+1.Create a Employee object using function constructor.
+Properties: name,email,salary,department,calculateTax
+2.Create a Student object using function constructor.
+Properties: name,email,department,dob, marks(Array of Objects{subject, mark}), calculateTotalMarks
+3.Create Question 1 and 2 object using class syntax also.
+
+____________________________________________Section C______________________________________
+Note: Take data from input tags and check objects in console.
+1.Create a Employee object using function constructor.
+Properties: name,email,salary,department,calculateTax
+2.Create a Student object using function constructor.
+Properties: name,email,department,dob, marks(Array of Objects{subject, mark} for 3 subjects), calculateTotalMarks
+3.Create Question 1 and 2 object using class syntax also.
+
+

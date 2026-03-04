@@ -1,0 +1,19 @@
+Full React Example: Student Management App (Exam-Level)
+
+This single example covers almost everything!
+
+📌 Features
+
+Add new student (name + marks)
+
+Display student list
+
+Delete student
+
+Update marks
+
+Total students count (computed using useEffect)
+
+Context API to manage global state
+
+Controlled input fields

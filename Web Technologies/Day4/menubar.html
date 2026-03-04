@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .menucontainer{
+            border-bottom:1px solid black;
+            display: flex;
+            margin-top:-8px;
+            margin-left: -8px;
+            margin-right: -8px;
+        }
+        .menu{
+            padding: 8px;
+            background-color: rgb(163, 186, 206);
+            /* border:1px solid black; */
+        }
+        .menu:hover{
+            background-color: aqua;
+        }
+    </style>
+</head>
+<body>
+    <div class="menucontainer">
+        <div class="menu">Article</div>
+        <div class="menu">Talk</div>
+        <div style="flex-grow: 1;"></div>
+        <div class="menu">Read</div>
+        <div class="menu">View Source</div>
+        <div class="menu">View History</div>
+        <div class="menu">Tools</div>
+    </div>
+</body>
+</html>

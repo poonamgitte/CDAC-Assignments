@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      var users = [];
+
+      function validateName() {
+        var name = document.getElementById("name").value;
+        if (name.length < 3) {
+          //alert("Name must be at least of 3 chars");
+          document.getElementById("nameErr").innerHTML =
+            "Name must be at least of 3 chars";
+        } else {
+          return name;
+        }
+      }
+
+      function validateEmail() {
+        var email = document.getElementById("email").value;
+        if (!email.endsWith("@cdac.in")) {
+          //alert("Email must of cdac");
+          document.getElementById("emailErr").innerHTML = "Email must of cdac";
+        } else {
+          document.getElementById("emailErr").innerHTML = "";
+          return email;
+        }
+      }
+
+      function saveUser() {
+        var name = validateName();
+        var email = validateEmail();
+
+        var genderDOMArr = document.getElementsByName("gender");
+        var gender = "";
+        if (genderDOMArr[0].checked) {
+          gender = genderDOMArr[0].value;
+        } else if (genderDOMArr[1].checked) {
+          gender = genderDOMArr[1].value;
+        } else if (genderDOMArr[2].checked) {
+          gender = genderDOMArr[2].value;
+        }
+
+        var langDOMArr = document.getElementsByName("lang")
+        var lang = []
+        for(i =0 ; i < langDOMArr.length; i++){
+            if(langDOMArr[i].checked){
+                lang.push(langDOMArr[i].value)
+            }
+        }
+
+
+
+        if (name && email && gender && lang.length >=2) {
+          var user = {
+            name: name,
+            email: email,
+            gender : gender,
+            lang : lang,
+          };
+          users.push(user);
+        }
+      }
+
+      function showData() {
+        var htmlStr = "";
+        for (i = 0; i < users.length; i++) {
+          htmlStr += `<tr>
+                    <td>${users[i].name}</td>
+                    <td>${users[i].email}</td>
+                    <td>${users[i].gender}</td>
+                    <td>${users[i].lang.join(" ")}</td>
+                </tr>`;
+        }
+        document.getElementById("tableContent").innerHTML = htmlStr;
+      }
+    </script>
+  </head>
+  <body class="bg-info">
+    <div class="container-fluid">
+      <div
+        class="row justify-content-around align-items-center"
+        style="height: 98vh"
+      >
+        <div class="col-4 shadow p-5">
+          <div class="mb-3">
+            <label class="form-label">Enter Name</label>
+            <input
+              type="text"
+              id="name"
+              class="form-control form-control-sm"
+              onblur="validateName()"
+            />
+            <span class="text-danger" id="nameErr"></span>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Enter Email</label>
+            <input
+              type="email"
+              id="email"
+              class="form-control form-control-sm"
+              onblur="validateEmail()"
+            />
+            <span class="text-danger" id="emailErr"></span>
+          </div>
+          <div class="mb-3">
+            <label for="" class="form-label">Gender</label>
+            <input type="radio" name="gender" value="male" /> Male
+            <input type="radio" name="gender" value="female" /> Female
+            <input type="radio" name="gender" value="others" /> Others
+          </div>
+          <div class="mb-3">
+            <label for="" class="form-label">Language</label>
+            <input type="checkbox" name="lang" value="hindi"> Hindi
+            <input type="checkbox" name="lang" value="english"> English
+            <input type="checkbox" name="lang" value="marathi"> Marathi
+          </div>
+          <div class="mb-3 text-center">
+            <button class="btn btn-primary btn-sm" onclick="saveUser()">
+              Save User
+            </button>
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="mb-3 text-center">
+            <button class="btn btn-primary btn-sm" onclick="showData()">
+              Show Data
+            </button>
+          </div>
+          <table class="table table-striped table-hover">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Gender</th>
+              </tr>
+            </thead>
+            <tbody id="tableContent"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

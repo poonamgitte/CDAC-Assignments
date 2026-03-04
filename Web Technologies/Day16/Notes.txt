@@ -1,0 +1,44 @@
+function useCurrencyExchange(){
+    let [amount, setAmount] = useState(0)
+
+        //process
+
+    return newAmount
+
+}
+
+1.Create a store
+configureStore({})
+2.Create reducers(function manpulating the states) by creating state slice
+createSlice({
+    name:""
+    intialState:""
+    reducers:{}
+}) 
+3.attach it to the store
+configureStore({reducer:{
+    reducerVariable : reducers    
+  }})
+4.Apply the store and attch store to provider
+<Provider store={Store}>
+</Provider>
+5.Access(getting the state data)
+var data = useSelector(state => state.data) 
+6.Update the state(manipulate the data):dispatch the action
+var dispatch = useDispatch()
+dispatch(actionName(data))
+
+
+            [state
+     store<-reducers]State Slice
+
+           manipulate
+App<-[Main]<-Fruits
+         <-FruitList
+            access
+
+
+
+
+
+

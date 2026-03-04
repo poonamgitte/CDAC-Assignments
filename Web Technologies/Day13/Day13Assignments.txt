@@ -1,0 +1,113 @@
+Use Express:
+1. Use Ajax and fetch
+2. Create proper project folder like routes,controllers structure for the express.
+_________________________Section A_________________________________________
+1.Create four html files addition.html, substraction.html, multiplication.html, division.html  and perform the airthmatic calculation on express server using AJAX
+
+2.Create a web page and take 3 Movies details and store on express server using AJAX  and show in table 
+Movies property : Movie Name,Price,Seat
+________________________________________Section B_______________________
+1.Write js code to read movie data from user and show in table(use bootstrap) and apply following validation
+Movie Fields : movieName, actor, release,Movie type(2d,3d,IMAX)(use checkbox)
+Implement Delete functionality too.
+Use AJAX/fetch to store on express server
+a)Movie Name must be of at least 5 characters 
+b)Actor name must be of at 3 chars
+
+2.Use Assignment 2 and complete question 2 and show data in table(Use bootstrap) and apply following validation
+Implement Delete functionality too.
+Use AJAX/fetch to store on express server
+a)Name must be 5 chars
+b)If Tomato Pizza sauce is selected then the user cannot select Supreme Pizza toppings
+c)Delievery Instruction must have at least 5 words
+
+_________________________________Setion C_____________________________
+1.Setup a react application and show "Hello " + your name on the page.
+
+
+__________________________________Section D__________________________
+1.Create a products html page and mark up two products in a list so each is a separate Product item using microdata:
+Code: 
+<ul>
+  <li itemscope itemtype="https://schema.org/Product">
+    <span itemprop="name">Laptop 14"</span> -
+    <span itemprop="price">799.00</span>
+  </li>
+  <li itemscope itemtype="https://schema.org/Product">
+    <span itemprop="name">Laptop 16"</span> -
+    <span itemprop="price">1099.00</span>
+  </li>
+</ul>
+1.Wrap each individual product (for example each <li> or <article>) with itemscope and itemtype="https://schema.org/Product", so parsers know “this block describes one Product”.
+2.Inside each product block, add properties like itemprop="name" and itemprop="price" on the relevant elements (name text, price text, etc.).
+3.Because each product has its own itemscope, search engines or other tools can treat them as separate structured items even though they are in a single visual list.
+
+The URL https://schema.org/Product defines a standard vocabulary type called "Product" used for annotating and describing any offered product or service on the web. It is part of Schema.org, a collaborative project that provides a collection of shared vocabularies to add structured data, like metadata about real-world things
+
+
+
+Note: 
+a)The navigator.geolocation is a property in JavaScript that provides access to the web browser's Geolocation API, which allows websites to retrieve the geographic location of the user's device. 
+b)Once permission is granted, developers can utilize methods like getCurrentPosition() to get the current latitude and longitude, or watchPosition() for real-time updates.
+
+2.Create a HTML page and get current latitude and longitude and log them.
+Code: 
+<button onclick="getLocation()">Get my location</button>
+<script>
+  function getLocation() {
+    if (!navigator.geolocation) {
+      console.log('Geolocation not supported.');
+      return;
+    }
+    //.getCurrentPosition(success_handler_function, fail_handler_function)
+    navigator.geolocation.getCurrentPosition(
+      function (position) {
+        console.log('Latitude:', position.coords.latitude);
+        console.log('Longitude:', position.coords.longitude);
+      },
+      function (error) {
+        console.error('Error:', error.message);
+      }
+    );
+  }
+</script>
+Steps:
+1.First, check if geolocation is available with if ("geolocation" in navigator) so you can handle old browsers.
+2.Then call navigator.geolocation.getCurrentPosition(successCallback, errorCallback); the browser asks for permission, and if the user agrees, the successCallback receives a position object.
+3.From position.coords.latitude and position.coords.longitude you read the numbers and log or display them.
+4.The error callback lets you handle cases like permission denied, timeout, or position unavailable.
+
+
+3.Display latitude and longitude in a <p> element instead of console.
+Code:
+<button onclick="showLocation()">Show my location</button>
+<p id="output"></p>
+
+<script>
+  function showLocation() {
+    const out = document.getElementById('output');
+    if (!navigator.geolocation) {
+      out.innerHTML = 'Geolocation not supported.';
+      return;
+    }
+    //.getCurrentPosition(success_handler_function, fail_handler_function)
+    navigator.geolocation.getCurrentPosition(
+      function (position) {
+        out.innerHTML =
+          'Lat: ' + position.coords.latitude +
+          ', Lon: ' + position.coords.longitude;
+      },
+      function () {
+        out.innerHTML = 'Unable to retrieve your location.';
+      }
+    );
+  }
+</script>
+
+1.Add an element in HTML (for example <p id="output"></p>) where the result will appear.
+2.After getCurrentPosition calls the success callback, build a text string like "Lat: ... , Lon: ..." and assign it to outputElement.textContent.
+3.In the error callback or when geolocation is not supported, set a friendly message (for example “Geolocation not supported” or “Unable to retrieve your location”) into that same element.
+
+
+
+

@@ -1,0 +1,60 @@
+CDAC WPT Lab Exam Question
+
+Develop a MERN/React + Express web application for Student Registration.
+
+🔥 Requirements
+
+Frontend (React.js)
+
+1. Create a student registration form with fields:
+
+Name
+
+Email
+
+Course
+
+Contact
+
+
+
+2. Validate:
+
+Name must be at least 3 characters
+
+Email format must be valid
+
+Contact should be 10 digits
+
+
+
+3. On form submission → send data to backend using Axios/Fetch POST.
+
+
+4. Create another page/component to display the list of registered students using GET API.
+
+
+5. Display in a table format.
+
+
+
+
+---
+
+Backend (Node + Express)
+
+1. Create an Express server on PORT 5000.
+
+
+2. Create routes:
+
+POST /register → Save student data
+
+GET /students → Return all students
+
+
+
+3. Store data in MongoDB/MySQL (any one).
+
+
+4. Send proper JSON responses on success/error.

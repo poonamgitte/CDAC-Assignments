@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    Enter Number1 : <input type="text" id="num1"> <br>
+    Enter Number2 : <input type="text" id="num2"> <br>
+    <button onclick="sum()">Sum</button>
+    <script>
+
+        function sum(){
+            var n1 = document.getElementById("num1").value
+            var n2 = document.getElementById("num2").value
+            var res = Number(n1) + Number(n2)
+            alert("Sum is"+ res)
+        }
+
+
+    </script>
+</body>
+</html>

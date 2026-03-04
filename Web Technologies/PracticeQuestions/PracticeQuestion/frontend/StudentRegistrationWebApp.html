@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-..." crossorigin="anonymous"></head>
+
+<body class="bg-primary">
+
+    <div class="container-fluid d-flex flex-column justify-content-center align-items-center vh-100 gap-2">
+        <div class="text-white fs-1">
+            <h2>Student Registration</h2>
+        </div>
+        <form class="p-5 border bg-white border-radius rounded">
+            <div class="mb-3">
+                Enter name: <input type="text" id="name" required />
+            </div>
+
+            <div class="mb-3">
+                Enter age: <input type="number" id="age" required>
+            </div>
+
+            <div class="mb-3">
+                Course :
+                <select id="course" required>
+                    <option value="DAC">DAC</option>
+                    <option value="DBDA">DBDA</option>
+                    <option value="DITIS">DITIS</option>
+                    <option value="DAI">DAI</option>
+                </select>
+            </div>
+
+            <button class="btn btn-outline-primary mx-1" onclick=saveData(event)>Submit</button>
+            <button class="btn btn-outline-primary" onclick=fetchData(event)>Show data</button>
+        </form>
+
+        <div class="mt-3 w-50">
+            <div class="text-white">
+                <h2>Student details</h2>
+            </div>
+
+            <table class="table table-striped table-bordered">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Age</th>
+                        <th>Course</th>
+                    </tr>
+                </thead>
+
+                <tbody id="table-data">
+
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+
+        // Save Data
+        function saveData(event) {
+            event.preventDefault()
+
+            let name = document.getElementById("name").value;
+            let age = document.getElementById("age").value;
+
+            let course = document.getElementById("course").value;
+
+
+            if (name.length == 0 || age.length == 0) {
+                alert("Invalid input")
+                return
+            }
+
+            if (age < 0) {
+                alert("invalid age entered")
+                return
+            }
+
+            console.log(name, age, course)
+
+            let obj = { name, age, course }
+
+            fetch("http://localhost:5000/register", {
+                method: "post",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(obj)
+            })
+                .then(res => res.json())
+                .then(data => {
+                    console.log("Saved data:", data)
+                    alert("Data saved successfully..")
+                })
+                .catch(err => {
+                    console.log(err.message)
+                })
+        }
+
+
+        // Receive data
+        function fetchData(event) {
+
+            event.preventDefault()
+
+            fetch("http://localhost:5000/students", {
+                method: "get"
+            })
+                .then(res => res.json())
+                .then(studentData => {
+                    console.log("Data fetched...", studentData)
+                    
+                    // adding data to table
+                    let tableData = document.getElementById("table-data");
+
+                    studentData.forEach(element => {
+                        tableData.innerHTML += `<tr>
+                        <td>${element.name}</td>
+                        <td>${element.age}</td>
+                        <td>${element.course}</td>
+                    </tr>`
+                    });
+
+                    console.log("student data:", studentData)
+                })
+                .catch(err => {
+                    console.log(err.message)
+                })
+
+
+
+        }
+    </script>
+</body>
+
+</html>

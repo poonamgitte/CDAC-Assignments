@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+      /*For AJAX:
+        1.Create object of XMLHttpRequest
+        2.Configure the request(path,type)
+        3.Configure headers(optional)
+        4.Register handler on property onreadystatechange
+        5.send the request
+      
+      */
+
+      function saveData() {
+        var name = document.getElementById("name").value;
+        var email = document.getElementById("email").value;
+        var user = { name: name, email: email };
+
+        //Plain JS ajax code
+        // var req = new XMLHttpRequest()
+        // req.open("POST","/api/user/new");
+        // req.setRequestHeader("Content-Type","application/json")
+        // req.onreadystatechange = function(){
+        //   //console.log("hello")
+        //   if(req.readyState == 4){
+        //     console.log(this.responseText) // access response by responseText property
+        //     let data = JSON.parse(this.responseText) // converting to object
+        //     document.getElementById("saveErr").innerHTML = data?.msg;
+        //   }
+        // }
+        // req.send(JSON.stringify(user))
+
+        //jquery ajax
+        $.ajax("/api/user/new",{
+          method : "POST",
+          data: JSON.stringify(user),
+          contentType : "application/json"
+        }).done(function(data){
+          //access data: automatically converts json to obj
+          console.log(data); 
+          document.getElementById("saveErr").innerHTML = data?.msg;
+        })
+
+        
+        // fetch("/api/user/new", {
+        //   method: "POST",
+        //   body: JSON.stringify(user),
+        //   headers: { "Content-Type": "application/json" },
+        // })
+        //   .then((res) => res.json())
+        //   .then((data) => {
+        //     console.log(data);
+        //     document.getElementById("saveErr").innerHTML = data?.msg;
+        //   })
+        //   .catch((err) => console.log(err));
+      }
+
+      function fetchUsers() {
+        // fetch("/api/user/xyz", {
+        //   method: "GET",
+        // })
+        //   .then((res) => res.json())
+        //   .then((data) => {
+        //     console.log(data);
+        //     generateHTML(data);
+        //   })
+        //   .catch((err) => console.log(err));
+
+        var req = new XMLHttpRequest()
+        req.open("GET","/api/user/xyz")
+        req.onreadystatechange = function(){
+          if(req.readyState == 4){
+            let data = JSON.parse(this.responseText)
+            console.log(data);
+            generateHTML(data);
+          }
+        }
+        req.send()
+      }
+
+      function generateHTML(data) {
+        let htmlStr = "";
+        data?.forEach((item) => {
+          htmlStr += `<tr>
+                    <td>${item?.name}</td>
+                    <td>${item?.email}</td>
+                    <td><button id="${item.email}">Delete</button></td>
+            </tr>`;
+        });
+        document.getElementById("tableBody").innerHTML = htmlStr;
+        data.forEach(item => {
+            document.getElementById(`${item.email}`).addEventListener('click',deleteUser)
+        })
+      }
+
+      function deleteUser() {
+        var email = event.target.id
+        console.log(email)
+        let path= `/api/user/del?email=${email}`
+        console.log(path)
+        fetch(path, {
+          method: "DELETE",
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            console.log(data);
+          })
+          .catch((err) => console.log(err));
+      }
+    </script>
+  </head>
+  <body>
+    Enter name : <input type="text" id="name" /><br />
+    Enter email : <input type="text" id="email" /><br />
+    <button id="saveBtn">Save</button><span id="saveErr"></span>
+    <hr />
+    <button id="showData">Show Users</button>
+    <table border="1">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>EMail</th>
+        </tr>
+      </thead>
+      <tbody id="tableBody"></tbody>
+    </table>
+
+    <script>
+      document.getElementById("saveBtn").addEventListener("click", saveData);
+      document.getElementById("showData").addEventListener("click", fetchUsers);
+    </script>
+  </body>
+</html>

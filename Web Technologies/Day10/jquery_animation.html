@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .main {
+        height: 200px;
+        width: 200px;
+        background-color: yellowgreen;
+      }
+
+      /* CSS Selector */
+      .block p { 
+        /* nested selection */
+      }
+      .block,.main{
+        /* same css for both selectors */
+      }
+
+      input[type=radio]:checked{
+        /* selection based on attribute */
+      }
+
+      button:first-child{
+        background-color: antiquewhite;
+      }
+      button:last-child{
+        background-color: azure;
+      }
+
+
+    </style>
+    <script src="jquery.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("#showBtn").click(function () {
+          $(".block").show(2000, function () {
+            console.log("Done");
+          });
+        });
+        $("#hideBtn").click(function () {
+          $(".block").hide();
+        });
+
+        $(".block").on("mouseover", function () {
+          $(".block").slideUp(3000);
+        });
+
+        $("#slideDownBtn").on("click", function () {
+          $(".block").slideDown(3000);
+        });
+
+        $("#animateBtn").click(function () {
+          $(".block").animate(
+            { width: "+=100px", height: "-=100px" },
+            3000,
+            function () {
+                $(".block").css({"background-color":"yellow"})
+            }
+          );
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div class="block main">Hi this is sid
+        <p>This is sample</p>
+    </div>
+
+    <button id="showBtn">Show</button>
+    <button id="hideBtn">Hide</button>
+    <button id="slideUpBtn">Slide Up</button>
+    <button id="slideDownBtn">Slide Down</button>
+    <button id="animateBtn">Animate</button>
+  </body>
+</html>

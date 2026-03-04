@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+    <script>
+
+        $(document).ready(function(){
+            $("#saveBtn").click(function(){
+                var fruitName = $("#fruitName").val()
+                //$("#fruitList").html($("#fruitList").html()+`<li>${fruitName}<li>`)
+                //$("#fruitList").append(`<li>${fruitName}</li>`)
+                $("#fruitList").prepend(`<li>${fruitName}</li>`)
+                
+            })   
+        })
+    </script>
+</head>
+<body>
+    Enter fruit name : <input type="text" id="fruitName">
+    <br>
+    <button id="saveBtn">Save</button>
+    <ol id="fruitList">
+
+    </ol>
+</body>
+</html>

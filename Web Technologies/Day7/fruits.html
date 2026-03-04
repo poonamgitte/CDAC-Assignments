@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function createList(){
+            var fruitName = document.getElementById("fruitName").value
+            document.getElementById("list").innerHTML += "<li>" + fruitName + "</li>" 
+        }
+    </script>
+</head>
+<body>
+    Enter fruit Name : <input type="text" id="fruitName">
+    <button onclick="createList()">Add to list</button> 
+    <ol id="list">
+        
+    </ol>
+</body>
+</html>

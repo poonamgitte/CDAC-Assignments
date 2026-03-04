@@ -1,0 +1,29 @@
+Student Registration Web App
+
+Server (Express)
+
+POST /register: save student {name, age, course} → return success message.
+
+GET /students: return all registered students.
+
+Use express.json(), express.urlencoded(), cors().
+
+Store data in an array.
+
+Frontend (HTML/JS)
+
+Form: Name, Age, Course → submit → POST /register.
+
+Button: Fetch students → GET /students → display in table.
+
+Prevent default form submission.
+
+Validate input (non-empty, age > 0).
+
+Style using Bootstrap or CSS.
+
+Output
+
+Alert on successful registration.
+
+Table shows all registered students.

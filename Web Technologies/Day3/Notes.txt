@@ -1,0 +1,19 @@
+selector{
+    property:value;
+    property:value;
+    ...
+}
+
+Selector Syntax:
+tagname
+#id
+.classname
+
+Colors:
+#12AB3434
+
+
+
+
+
+

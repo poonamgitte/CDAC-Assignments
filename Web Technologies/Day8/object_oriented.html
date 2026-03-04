@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // var std1 = {
+        //     name : "siddhant",
+        //     email : "s@gmail.com",
+        //     getAge: function(){
+        //         return 34
+        //     }
+        // }
+        // var std2 = {
+        //     name : "rajat",
+        //     email : "s@gmail.com",
+        //     getAge: function(){
+        //         return 34
+        //     }
+        // }
+        // var std3 = {
+        //     name : "anubhav",
+        //     email : "s@gmail.com",
+        //     getAge: function(){
+        //         return 34
+        //     }
+        // }
+
+        //constructor
+        function Student(name, email){
+            this.name = name
+            this.email = email
+            this.getAge = function(){
+                return 43
+            }
+        }
+        //var x = Student() //normal function
+        var std1 = new Student("siddhant","s@gmail.com")
+        var std2 = new Student("rajat","s@gmail.com")
+        var std3 = new Student("anubhav","s@gmail.com")
+
+        std1["name"] = "sid"
+        std1.phone = "326275"
+        delete std1.email
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

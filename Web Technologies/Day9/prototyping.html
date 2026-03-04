@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // var obj = {
+        //     name : "Siddhant",
+        //     email : "s@gmail.com"
+        // }
+
+        function Org(orgName){
+            this.orgName = orgName
+        }
+
+        function Student(name ,email,marks){
+            this._name = name
+            this.email = email
+            this.marks = marks
+        }
+
+        // Student.prototype.getTotalMarks = function(){
+        //     return "Total marks"
+        // }
+
+        // Student.prototype.getAge = function(){
+        //     return "Total Age"
+        // }
+
+        // Student.prototype.stds = 0
+        var orgnization = new Org("CDAC")
+        Student.prototype = orgnization 
+
+        var std1 = new Student("sid","s@gmail.com",[10,20])
+        var std2 = new Student("rajat","s@gmail.com",[10,20])
+        var std3 = new Student("anubhav","s@gmail.com",[10,20])
+
+        
+        var sunbeam = new Org("Sunbeam")
+        Object.setPrototypeOf(std1, sunbeam)
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

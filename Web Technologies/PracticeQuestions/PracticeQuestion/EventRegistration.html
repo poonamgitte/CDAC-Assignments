@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.8/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        input{
+            border-radius: 4px;
+            padding: 2px;
+            background-color: rgb(237, 235, 235);
+        }
+    </style>
+</head>
+
+
+
+<body class="d-flex flex-column">
+
+    <div class="container-fluid d-flex flex-column justify-content-center align-items-center gap-3 vh-100 bg-primary">
+
+        <div >
+        <h2 class="text-white fs-1">registration details</h2>
+        </div>
+
+    <form class="border d-flex flex-column p-4 gap-3 bg-white shadow ">
+
+        <div>
+            Enter name:
+            <select id="salutation" required>
+                <option value="">Salutation</option>
+                <option value="Mr">Mr</option>
+                <option value="Miss">Miss</option>
+                <option value="other">other</option>
+            </select>
+
+            <input type="text" id="first-name" placeholder="First Name" required>
+            <input type="text" id="last-name" placeholder="Last Name" required>
+
+        </div>
+
+
+        <div>
+            Enter Email: <input type="email" id="email" placeholder="email" required>
+        </div>
+
+        <div>
+            Enter Confirmed Email: <input type="email" id="confirmed-email" placeholder="Confirmed email" required>
+        </div>
+
+        <div>
+            Event Type:
+
+            <select id="eventType" required>
+                <option value="webinar">Webinar</option>
+                <option value="workshop">workshop</option>
+                <option value="bootcamp">bootcamp</option>
+            </select>
+        </div>
+
+
+        <div>
+            Level:
+            <input type="radio" id="beginner" name="level" value="beginner" required>
+            <label for="beginner">Beginner</label>
+
+            <input type="radio" id="intermediate" name="level" value="intermediate" required>
+            <label for="intermediate">Intermediate</label>
+
+            <input type="radio" id="advanced" name="level" value="advanced" required>
+            <label for="advanced">Advanced</label>
+
+        </div>
+
+        <div>
+            <button class="btn btn-outline-primary" type="button" onclick=calculateFees(event)>Calculate Registration fees</button>
+        </div>
+
+
+        <div>
+            Registration fees: <input type="text" id="calculated-fees" value="" readonly>
+        </div>
+
+        <div>
+            <button class="btn btn-outline-primary" type="button" onclick=displayDetails(event)>display details</button>
+            <button class="btn btn-primary" type="button" onclick=validateForm(event)>Submit</button>
+        </div>
+
+    </form>
+
+    </div>
+    
+
+
+    <script>
+
+        // Lookup object
+        let selectedCost = {
+            "webinar": {
+                "beginner": 500,
+                "intermediate": 800,
+                "advanced": 1000
+            },
+            "workshop": {
+                "beginner": 1500,
+                "intermediate": 2500,
+                "advanced": 3500
+            },
+            "bootcamp": {
+                "beginner": 3000,
+                "intermediate": 4500,
+                "advanced": 6000
+            }
+
+
+        }
+
+
+        // calculate registration fees
+        function calculateFees(event) {
+            event.preventDefault()
+            let eventType = document.getElementById("eventType").value;
+
+            let level = document.getElementsByName("level");
+
+            let selectedLevel = ""
+
+            level.forEach(element => {
+
+                console.log("element", element)
+                if (element.checked) {
+                    selectedLevel = element.value
+                }
+            });
+
+            let calculatedCost = selectedCost[eventType][selectedLevel]
+
+            document.getElementById("calculated-fees").value = calculatedCost
+        }
+
+
+
+        function validateForm(event) {
+
+            event.preventDefault()
+
+            // email validation
+
+            let email = document.getElementById("email").value;
+            let confirmedEmail = document.getElementById("confirmed-email").value;
+
+            if (email !== confirmedEmail) {
+                alert("Email and Confirmed email must match");
+                return
+            }
+
+            if (!email.includes('@') || !email.includes('.') || email.indexOf('@') > email.lastIndexOf('.')) {
+                alert("Invalid email format");
+                return
+
+            }
+
+            alert("all data entered correctly")
+        }
+
+
+        function displayDetails(event) {
+            event.preventDefault()
+
+            let salutation = document.getElementById("salutation").value;
+            let fName = document.getElementById("first-name").value;
+            let lName = document.getElementById("last-name").value;
+
+            let fullName = salutation + " " + fName + " " + lName;
+
+            let email = document.getElementById("email").value;
+            let confirmedEmail = document.getElementById("confirmed-email").value;
+
+            let eventType = document.getElementById("eventType").value;
+
+            let level = document.getElementsByName("level");
+
+            let selectedLevel = ""
+
+            level.forEach(element => {
+
+                console.log("element", element)
+                if (element.checked) {
+                    selectedLevel = element.value
+                }
+            });
+
+            let regestrationCost = document.getElementById("calculated-fees").value;
+
+
+            // open window to show user details
+            let detailsWindow = window.open("", "Registered user details", "width=700px, height=700px");
+            detailsWindow.document.write(`<h2>Register user details</h2>`)
+            detailsWindow.document.write(`<p><b>Full Name:</b> ${fullName}</p>`)
+            detailsWindow.document.write(`<p><b>Email id: </b> ${email}</p>`)
+            detailsWindow.document.write(`<p><b>Event type: </b> ${eventType}</p>`)
+            detailsWindow.document.write(`<p><b>Level: </b> ${selectedLevel}</p>`)
+            detailsWindow.document.write(`<p><b>Registration cost: </b> ${regestrationCost}</p>`)
+        }
+
+
+    </script>
+</body>
+
+</html>

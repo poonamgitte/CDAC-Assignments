@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Document</title>
+    <script>
+      var users = [];
+ 
+      function sample(){
+        console.log(this)
+        this.data = "sdjkfhs"
+      }
+      sample()
+
+      function validateName(event) {
+        //this.abc = 23879
+        var name = document.getElementById("username").value
+        if (name.length < 3) {
+          alert("Name must at least 4 chars");
+        }else {
+            return name
+        }
+      }
+
+      function saveUser(event) {
+        
+        event.preventDefault(); // stops the default action
+        var name = validateName()
+        var email = event.target.email.value;
+        var dob = event.target.dob.value;
+        var valid = true;
+
+        if (valid) {
+          users.push({
+            name: name,
+            email: email,
+            dob: dob,
+          });
+          // document.getElementById("form").submit()
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <form action="/xyz" id="form">
+      Enter Username:
+      <input type="text" name="username" id="username" required />
+      <br />
+      Enter email : <input type="email" name="email" id="email" />
+      <br />
+      Enter dob : <input type="date" name="dob" id="dob" />
+      <br />
+      <input type="radio" name="gender" id="" checked />Male
+      <button>Save</button>
+    </form>
+    <script>
+      document.getElementById("form").addEventListener("submit", saveUser);
+      document
+        .getElementById("username")
+        .addEventListener("blur", validateName);
+    </script>
+  </body>
+</html>

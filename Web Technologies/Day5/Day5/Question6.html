@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- 4.Implement a calculator using if-else ladder
+(Take two number from prompt and also operator from prompt) 
+
+ -->
+
+    <script>
+
+
+        let num1 = Number(prompt('Enter number1:'))
+         let num2 = Number(prompt('Enter number2:'))
+        let opr = prompt('Enter operator:')
+
+      if (opr === '+') {
+       
+        alert("Sum : "+ (num1 + num2));
+
+      } else if (opr == '-') {
+        alert('Subtraction : ' + (num1 - num2))
+      } else if (opr == '*') {
+        alert('Multiply : ' + (num1 * num2))
+      } else if (opr == '/') {
+
+        if(num2 == 0){
+            alert("Division by 0 not possible");
+        }else{
+
+            alert('Divide : ' + (num1 / num2))
+        }
+      } else if (opr == '%') {
+        alert('Modulo : ' + (num1 % num2))
+      }
+      
+    </script>
+  </body>
+</html>

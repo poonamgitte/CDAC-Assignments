@@ -1,0 +1,171 @@
+Simple Selectors
+Select elements by name, class, id, or universally.
+Element selector
+Description: Selects all elements of a specific tag.
+Example: p { color: red; }
+
+Class selector
+Description: Selects elements by class attribute.
+Example: .button { background: blue; }
+
+ID selector
+Description: Selects the element with a matching id attribute.
+Example: #main { padding: 10px; }
+
+Universal selector
+Description: Selects all elements in the document.
+Example: * { box-sizing: border-box; }
+
+Grouping selector
+Description: Groups multiple selectors to share styles.
+Example: h1, h2, p { font-family: Arial; }
+
+Attribute Selectors
+Select elements using attributes or attribute values.
+Presence selector
+Description: Selects elements with a given attribute.
+Example: input[type] { border: 1px solid; }
+
+Exact value selector
+Description: Selects elements with a specific attribute value.
+Example: input[type="text"] { background: yellow; }
+
+Starts with selector
+Description: Attribute value starts with specific text.
+Example: img[alt^="profile"] { border: 1px solid; }
+
+Ends with selector
+Description: Attribute value ends with specific text.
+Example: a[href$=".pdf"] { color: red; }
+
+Contains selector
+Description: Attribute value contains specific text.
+Example: a[href*="download"] { text-decoration: underline; }
+
+Combinator Selectors
+Select elements by their relationship in the DOM.
+Descendant selector
+Description: Selects elements inside another element.
+Example: div p { margin: 0; }
+
+Child selector (>)
+Description: Selects direct children of an element.
+Example: ul > li { list-style: none; }
+
+Adjacent sibling selector (+)
+Description: Selects next sibling of an element.
+Example: h2 + p { color: green; }
+
+General sibling selector (~)
+Description: Selects all siblings after an element.
+Example: h2 ~ p { color: red; }
+
+Pseudo-Class Selectors
+Select elements by state or position.
+:hover
+Description: Selects elements when hovered.
+Example: button:hover { background: green; }
+
+:focus
+Description: Selects elements when focused.
+Example: input:focus { outline: blue; }
+
+:active
+Description: Selects elements when activated.
+Example: a:active { color: orange; }
+
+:visited
+Description: Selects visited links.
+Example: a:visited { color: purple; }
+
+:first-child
+Description: Selects the first child of a parent.
+Example: li:first-child { font-weight: bold; }
+
+:last-child
+Description: Selects the last child of a parent.
+Example: li:last-child { color: red; }
+
+:nth-child(n)
+Description: Selects the nth child of a parent.
+Example: tr:nth-child(2) { background: #eee; }
+
+:not(selector)
+Description: Selects elements not matching a selector.
+Example: input:not([type="submit"]) { background: white; }
+
+:checked
+Description: Selects checked inputs.
+Example: input:checked { outline: 2px solid green; }
+
+:required
+Description: Selects required inputs.
+Example: input:required { border: 2px solid red; }
+
+:invalid
+Description: Selects invalid inputs.
+Example: input:invalid { border-color: red; }
+
+:valid
+Description: Selects valid inputs.
+Example: input:valid { border-color: green; }
+
+:read-only
+Description: Selects read-only inputs.
+Example: input:read-only { background: #eee; }
+
+:root
+Description: Selects the root element.
+Example: :root { --main-color: red; }
+
+Pseudo-Element Selectors
+Style parts of an element.
+::after
+Description: Inserts content after an element.
+Example: p::after { content: "✓"; }
+
+::before
+Description: Inserts content before an element.
+Example: p::before { content: "*"; }
+
+::first-line
+Description: Styles the first line of an element.
+Example: p::first-line { color: blue; }
+
+::first-letter
+Description: Styles the first letter of an element.
+Example: p::first-letter { font-size: 200%; }
+
+::selection
+Description: Styles selected text.
+Example: p::selection { background: yellow; }
+
+Browser-Specific/Input Selectors
+Target input and browser-specific states.
+input[type="text"]
+Description: Styles text input fields.
+Example: input[type="text"] { border: 1px solid #ccc; }
+
+input:focus
+Description: Styles input on focus.
+Example: input:focus { background: #eef; }
+
+input:disabled
+Description: Styles disabled input.
+Example: input:disabled { background: #eee; }
+
+input:-webkit-autofill
+Description: Styles autofilled inputs (Chrome/Safari).
+Example: input:-webkit-autofill { background: yellow; }
+
+input::-ms-input-placeholder
+Description: Styles placeholder (IE).
+Example: input::-ms-input-placeholder { color: #888; }
+
+input::-webkit-input-placeholder
+Description: Styles placeholder (Chrome/Safari).
+Example: input::-webkit-input-placeholder { color: green; }
+
+input::-moz-placeholder
+Description: Styles placeholder (Firefox).
+Example: input::-moz-placeholder { color: blue; }

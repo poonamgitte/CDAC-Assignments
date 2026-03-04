@@ -1,0 +1,160 @@
+Table:
+border-collapse:collapse;
+
+Flexbox & Grid Properties
+flex-direction:row|row-reverse|column|column-reverse
+flex-wrap:nowrap|wrap|wrap-reverse
+justify-content:flex-start|flex-end|center|space-between|space-around|space-evenly
+align-items:stretch|flex-start|flex-end|center|baseline
+align-content:stretch|flex-start|flex-end|center|space-between|space-around
+order:number
+flex-grow:number
+flex-shrink:number
+flex-basis:auto|length|%
+flex:auto|none|initial|inherit
+
+grid-template-columns:none|length|%|auto|repeat()
+grid-template-rows:none|length|%|auto|repeat()
+grid-template-areas:none|string
+grid-column-gap:length|%
+grid-row-gap:length|%
+grid-column: start/end|auto
+grid-row: start/end|auto
+grid-area:name
+place-items:auto|center|start|end|stretch
+grid-auto-flow:row|column|dense
+
+Transform & Filter Properties
+transform:none|translate()|scale()|rotate()|skew()|matrix()
+transform-origin:x|y|z|%|length
+perspective:none|length
+backface-visibility:visible|hidden
+filter:none|blur()|brightness()|contrast()|drop-shadow()|grayscale()|hue-rotate()|invert()|opacity()|saturate()|sepia()
+
+Responsive & Media-Related Properties
+object-fit:fill|contain|cover|none|scale-down
+object-position:x|y|%
+@media only|not|all and (media feature)
+
+Advanced Visual Properties
+box-shadow:none|h-offset v-offset blur spread color|inset
+text-shadow:none|h-offset v-offset blur color
+clip-path:none|polygon()|circle()|ellipse()|inset()
+mask-image:none|url()
+mix-blend-mode:normal|multiply|screen|overlay|darken|lighten|color-dodge|color-burn|hard-light|soft-light|difference|exclusion|hue|saturation|color|luminosity
+isolation:auto|isolate
+opacity:number (0 to 1)
+
+Custom Properties & Variables
+--variable:value
+var(--variable)
+
+Examples: 
+/* No transformation */
+transform: none;
+
+/* 2D translation: Move right by 50px and down by 30px */
+transform: translate(50px, 30px);
+
+/* Scale up twice as wide and tall */
+transform: scale(2, 2);
+
+/* Rotate by 45 degrees */
+transform: rotate(45deg);
+
+/* Skew X by 20deg and Y by 10deg */
+transform: skew(20deg, 10deg);
+
+/* Apply transformation matrix */
+transform: matrix(1, 0.5, -0.5, 1, 30, 20);
+
+/* Set origin to left edge (x-axis) */
+transform-origin: 0;
+
+/* Center vertically (y-axis) */
+transform-origin: 50% 100%;
+
+/* Use z-axis for 3D */
+transform-origin: 50% 50% 20px;
+
+/* Use pixel values */
+transform-origin: 20px 40px;
+
+/* Default (no perspective) */
+perspective: none;
+
+/* Giving a 3D perspective of 800px */
+perspective: 800px;
+
+/* Show the "back" of an element */
+backface-visibility: visible;
+
+/* Hide the back */
+backface-visibility: hidden;
+
+/* No filter */
+filter: none;
+
+/* Blur effect */
+filter: blur(4px);
+
+/* Increase brightness */
+filter: brightness(150%);
+
+/* Increase contrast */
+filter: contrast(2);
+
+/* Drop shadow effect */
+filter: drop-shadow(2px 4px 6px black);
+
+/* Grayscale effect */
+filter: grayscale(70%);
+
+/* Hue rotation */
+filter: hue-rotate(120deg);
+
+/* Invert colors */
+filter: invert(1);
+
+/* No shadow */
+text-shadow: none;
+
+/* Horizontal 2px, vertical 5px, blur 10px, black */
+text-shadow: 2px 5px 10px #000;
+
+/* Multiple shadows */
+text-shadow: 1px 1px 2px gray, 0 0 1em blue;
+
+/* No clip */
+clip-path: none;
+
+/* Polygon shape */
+clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+
+/* Circular shape */
+clip-path: circle(40% at 60% 40%);
+
+/* Ellipse shape */
+clip-path: ellipse(60% 40% at 40% 60%);
+
+/* Inset (rectangular) */
+clip-path: inset(5% 10% 15% 20%);
+
+/* No mask */
+mask-image: none;
+
+/* Mask using an image URL */
+mask-image: url('sample.png');
+
+/* Default: auto (element doesn't isolate) */
+isolation: auto;
+
+/* Force element into its own stacking context */
+isolation: isolate;
+
+
+
+
+
+
+

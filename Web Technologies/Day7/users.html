@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        function addToTable(){
+            var name = document.getElementById("name").value
+            var email = document.getElementById("email").value
+            document.getElementById("tableContent").innerHTML += `<tr>
+                    <td>${name}</td>
+                    <td>${email}</td>
+                </tr>`
+        }
+
+    </script>
+</head>
+<body>
+   Enter name:  <input type="text" id="name">
+   Enter email : <input type="text" id="email">
+   <button onclick="addToTable()">Add To Table</button>
+   <table border="1">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody id="tableContent">
+
+        </tbody>
+   </table>
+</body>
+</html>

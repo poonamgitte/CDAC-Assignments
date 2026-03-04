@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <!-- 4.Create a web page and take 3 Movies details from prompt and show in table
+Movies property : Movie Name,Price,Seat
+
+ -->
+    <script>
+
+    var arrMovie = []
+
+    var name, price, seat; 
+   for(i=0; i<3;i++){
+      
+        name = prompt("Enter movie "+ (i+1) + " name: "); 
+        price = prompt("Enter movie "+ (i+1) + " price: "); 
+        seat = prompt("Enter movie "+ (i+1) + " seat: "); 
+        
+
+        var obj = {
+            name:name,
+            price:price,
+            seat: seat
+        }
+
+        arrMovie.push(obj);
+   }
+
+   var htmlTable = `<h3>Movie Data</h3> <br><table border=1> <tr> <th>Name</th> <th>Price</th> <th>Seat</th>`
+
+    for(i=0; i<arrMovie.length;i++){
+
+        htmlTable += `<tr> <td>${arrMovie[i].name}</td>
+                        <td>${arrMovie[i].price}</td>
+                        <td>${arrMovie[i].seat}</td>
+                        <tr>`
+    }
+
+    htmlTable += `</table>`;
+
+    document.write(htmlTable);
+ </script>
+</body>
+</html>

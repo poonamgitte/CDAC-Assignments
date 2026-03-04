@@ -1,0 +1,32 @@
+     UserContext
+              useContext
+App<-[Main]<-users
+           <-usertable<-deleteuser
+             Consumer     useContext
+
+1.Create a context
+    var ContextVar = createContext()
+2.Assign data/functions to the context and apply on component tree
+<ContextVar.Provider value={{data1,func1}}>
+    ComponentJSX
+</ContextVar.Provider>
+3.Access data/functions by two ways
+  a) by Consumer 
+    <ContextVar.Consumer>
+        {(value) => {use the data from value 
+                like value.data1 or value.func1}}
+    </ContextVar.Consumer>
+  b) by useContext
+    var dataFromContext = useContext(ContextVar)
+    var {data1,func1} = useContext(ContextVar)
+
+
+var {a,b} = {a:10,b:20}
+a
+b
+
+data  
+f(o)->f(inp)
+App<-Users<-A-<-B
+   <-UserTable<-TableRow<-deleteuser
+                         <-edituser<-selectusertype

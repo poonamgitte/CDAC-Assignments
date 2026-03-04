@@ -1,0 +1,8 @@
+If want to execute without module detection
+node --no-experimental-detect-module yourscript.js
+
+
+1.Node.js 22: The module detection was experimental and enabled via --experimental-detect-module.
+2.Node.js 22.7+: The detection became stable and enabled by default.
+3.Node.js 24: The detection feature remains stable, non-experimental, and enabled by default with no manual flag needed.
+4.To disable, an explicit flag --no-experimental-detect-module can be passed, but it is rarely needed in standard use

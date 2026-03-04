@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+    <script>
+
+        function sum(){
+            //var num1 = document.getElementById("num1").value
+            var num1 = $("#num1").val()
+            var num2 = $("#num2").val()
+            let res = Number(num1) + Number(num2)
+            $(".res").html("Result is" + res) // innerHTML
+        }
+
+    </script>
+</head>
+<body>
+    Enter number 1 : <input type="text" id="num1">
+    Enter number 2 : <input type="text" id="num2">
+    <button id="sum">Sum</button>
+    <div class="res"></div>
+    <script>
+        //$("#sum").on('click',sum)
+        $("#sum").click(sum)
+        //$("#num1").blur(validateName)        
+    </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+Note: 
+1.Section A Question 4 is compulsory
+2.Use Express
+3.Use JSON
+___________________Section A__________________________________
+1.Create server that handle below path:
+	a)/data -> Respond "this is data"
+	b)/profile -> Respond "this is profile"
+	
+2.Create four html files addition.html, substraction.html, multiplication.html, division.html  and perform the airthmatic calculation on express server
+
+3.Create calculator.html(two text box and five radio button for operation Addtion,Substraction,Multiplication,Divison,Modulas) and perfrom calculation on server
+
+4.Create register page(Name,date of birth,phone,email,gender,language(checkbox),State(dropdown)) and recieve data on server and repond "Got data"
+____________________Section B_____________________________________
+1.Create four html files addition.html, substraction.html, multiplication.html, division.html  and perform the airthmatic calculation on express server using Fetch
+
+2.Create a web page and take 3 Movies details and store on express server using Fetch  and respond with message and show message on page.
+Movies property : Movie Name,Price,Seat
+__________________Section C___________________________________________
+Optional:
+1.Write js code to read movie data from user and show in table(use bootstrap) and apply following validation
+Movie Fields : movieName, actor, release,Movie type(2d,3d,IMAX)(use checkbox)
+Use Fetch to store on express server
+a)Movie Name must be of at least 5 characters 
+b)Actor name must be of at 3 chars
+
+

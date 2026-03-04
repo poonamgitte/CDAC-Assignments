@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .main{
+            height : 200px;
+            width: 200px;
+            background-color: yellowgreen;
+        }
+    </style>
+    <script src="jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+
+            $("#change").click(function(){
+                //document.getElementById("block").style.backgroundColor = "yellow"
+                //document.getElementById("block").style.height = "200px"
+                //document.getElementById("block").style.width = "200px"
+                // $("#block").css({"background-color": "yellow"})
+                // $("#block").css("height","200px")
+                // $("#block").css("width",function(index,value){
+                //     let width = parseInt($(this).css("width"))+300 
+                //     $(this).css("width",width+"px")
+                // })
+                //document.getElementById("block").classList.add("main")
+                $("#block").addClass("main")
+
+            })
+
+            $("#restore").click(function(){
+                //document.getElementById("block").classList.remove("main")
+                $("#block").removeClass("main")
+                //$("#fruitName").attr("type","password")
+            })
+
+        })
+    </script>
+</head>
+<body>
+    <div id="block" >Hi This is sid</div>
+    <button id="change">Change</button>
+    <button id="restore">Restore</button>
+</body>
+</html>

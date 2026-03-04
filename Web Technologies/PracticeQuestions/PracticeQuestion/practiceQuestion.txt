@@ -1,0 +1,133 @@
+📘 CDAC – Web Programming Technologies (WPT) Practice Lab Exam – SET: PRACTICE-A
+
+Duration: 3 Hours
+Maximum Marks: 40
+Instructions:
+
+All questions are compulsory.
+
+Submit .html, .js, .txt, .jsx/.js files as required.
+
+Use HTML5, CSS3, JavaScript, jQuery, Bootstrap, NodeJS, React.
+
+✅ Q1. HTML + CSS + JavaScript (20 Marks)
+
+Create an online Event Registration form with the following requirements:
+
+Form Requirements
+
+All fields are mandatory (2 Marks)
+
+Salutation (dropdown)
+
+First Name
+
+Last Name
+
+Email
+
+Confirm Email
+
+Event Type (dropdown: "Webinar", "Workshop", "Bootcamp")
+
+Level (radio: Beginner, Intermediate, Advanced)
+
+Validate Email & Confirm Email match (2 Marks)
+
+Validate Email format (1 Mark)
+
+Calculate Registration Fees based on Event + Level (5 Marks)
+Use the cost table:
+
+Event Type	Beginner	Intermediate	Advanced
+Webinar	500	800	1000
+Workshop	1500	2500	3500
+Bootcamp	3000	4500	6000
+
+Fees field must be readonly.
+
+Submit button must validate form and show alert:
+✔ "All data entered correctly!" (2 Marks)
+
+Concatenate full name (Dr Amit Sharma) (2 Marks)
+
+"Display Details" button
+→ Opens a new window showing nicely formatted user details
+(3 Marks)
+
+Look & Feel using CSS/Bootstrap (3 Marks)
+
+✅ Q2. NodeJS & File Handling (10 Marks)
+
+Create a numbers.txt file containing numbers line-by-line.
+
+Requirements
+
+Read contents of file (Sync or Async) (4 Marks)
+
+Compute cube of each number and print as output (3 Marks)
+
+Display:
+
+All cubes
+
+Total of cubes
+
+Average of original numbers
+(3 Marks)
+
+Example input:
+2
+3
+4
+
+Output:
+8
+27
+64
+Total Cubes: 99
+Average of Original Numbers: 3
+
+✅ Q3. React Component (10 Marks)
+Requirements
+
+Create a React component system to:
+
+Child component with two number inputs (form) (3 Marks)
+
+Store data using useState inside the child component (4 Marks)
+
+Calculate and display the product (multiplication) of the two numbers on button submit
+and show result below the form (3 Marks)
+
+Additional Requirements:
+
+Import child component into App.js
+
+Do not calculate on typing — calculation only on button click.
+
+🎯 BONUS PRACTICE QUESTIONS (Highly Recommended)
+
+Not part of the marks, but will prepare you for ANY pattern:
+
+HTML/JS Extra Practice
+
+✔ Form with password + confirm password
+✔ Form validation using regex
+✔ OnChange dropdown → dynamically load options
+✔ Print receipt in new tab
+
+NodeJS Extra Practice
+
+✔ Read JSON file → parse → calculate stats
+✔ Write CSV data
+✔ Append logs
+✔ Async/await file operations
+
+React Extra Practice
+
+✔ Build ToDo app
+✔ Use props + lifting state up
+✔ Fetch API with useEffect
+✔ Use Bootstrap in React
+✔ Parent → multiple child components

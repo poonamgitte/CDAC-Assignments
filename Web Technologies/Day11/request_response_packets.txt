@@ -1,0 +1,38 @@
+Request packet:
+[headers][data]
+siGET /rfc/rfc2616.txt HTTP/2
+Host: www.ietf.org
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:134.0) Gecko/20100101 Firefox/134.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate, br, zstd
+Referer: https://www.google.com/
+Connection: keep-alive
+Cookie: __cf_bm=W0F8.QW8H1TBylQX.bDps5uIWxgJGPdbXw84l4WQLFU-1763533172-1.0.1.1-jv3O9sWlmIm87KqVnjgAKP6kW_avr38Q.HxICcdlTdwYXv7iOnqoI50PD2ICt3GMj4Nqq39Y_2pQ38yQ17OsGCKhoK8dr.bbN0Q_aBLokgQ
+Upgrade-Insecure-Requests: 1
+Sec-Fetch-Dest: document
+Sec-Fetch-Mode: navigate
+Sec-Fetch-Site: cross-site
+Sec-Fetch-User: ?1
+If-Modified-Since: Fri, 11 Jun 1999 18:46:53 GMT
+If-None-Match: W/"3761599d-67187"
+Priority: u=0, i
+
+
+
+Response Packet
+[headers][data]
+HTTP/2 304 
+date: Wed, 19 Nov 2025 06:26:07 GMT
+cf-ray: 9a0da25eae8859be-DEL
+etag: "3761599d-67187"
+last-modified: Fri, 11 Jun 1999 18:46:53 GMT
+cf-cache-status: HIT
+age: 221657
+expires: Wed, 19 Nov 2025 10:26:07 GMT
+cache-control: public, max-age=14400
+vary: Accept-Encoding
+server: cloudflare
+alt-svc: h3=":443"; ma=86400
+X-Firefox-Spdy: h2
+

@@ -1,0 +1,57 @@
+https://www.google.com:443/search?q=computer&sca_esv=ce0ce1
+
+querystring = q=computer&sca_esv=ce0ce1
+/search = path
+google.com = host address
+www = sub-domain
+Port number : 443
+protocol : http + ssl layer
+
+
+https://api.google.com:8080/search?q=computer&sca_esv=ce0ce1
+
+querystring = q=computer&sca_esv=ce0ce1
+/search = path
+google.com = host address
+sub domain = api
+Port number : 8080
+protocol : http + ssl layer
+
+https://google.com:8080/search/data
+
+/search/data = path
+google.com = host address
+Port number : 8080
+protocol : http + ssl layer
+
+
+[proto]://[hostname][portnumber][application_res_path][?querystring]
+
+
+/ -> root path
+/data -> data directory in root path
+
+http://google.com:8080
+port number:8080
+path = /
+querystring = data=xyz
+
+var obj = //userobject
+
+jsonData = JSON.stringify(obj)
+{
+    "name":"siddhant",
+    "lang":["hindi","marathi"],
+    "age":23,
+    "address":{
+        "city":"pune"
+    }
+}
+var data = JSON.parse(jsonData)
+
+
+
+
+
+
+

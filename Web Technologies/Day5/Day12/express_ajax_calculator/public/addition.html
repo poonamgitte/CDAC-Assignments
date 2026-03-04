@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Addition Calculator</title>
+    <script>
+        function calculate() {
+            var num1 = document.getElementById("num1").value;
+            var num2 = document.getElementById("num2").value;
+            var resultElement = document.getElementById("result");
+
+            if (!num1 || !num2) {
+                resultElement.innerHTML = "Please enter both numbers.";
+                return;
+            }
+
+            // Construct the API path with query parameters
+            let path = `/api/calc/add?num1=${num1}&num2=${num2}`;
+            console.log("Fetching:", path);
+
+            // Using Fetch API (Modern AJAX)
+            fetch(path, {
+                method: "GET",
+            })
+            .then((res) => res.json())
+            .then((data) => {
+                console.log(data);
+                if (data?.type === "success") {
+                    resultElement.innerHTML = `Result: <strong>${data.result}</strong>`;
+                } else {
+                    resultElement.innerHTML = `Error: ${data?.msg}`;
+                }
+            })
+            .catch((err) => {
+                console.error("Fetch error:", err);
+                resultElement.innerHTML = "An unexpected error occurred.";
+            });
+        }
+    </script>
+</head>
+<body>
+    <h1> Addition</h1>
+    Num 1: <input type="number" id="num1" value="10" /><br />
+    Num 2: <input type="number" id="num2" value="5" /><br />
+    <button id="calcBtn">Calculate (Num1 + Num2)</button>
+    <hr />
+    <p id="result">Result will appear here.</p>
+
+    <script>
+      document.getElementById("calcBtn").addEventListener("click", calculate);
+    </script>
+</body>
+</html>

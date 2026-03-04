@@ -1,0 +1,19 @@
+More Tags:
+b -> bold 
+i
+u
+strong
+pre
+center
+
+
+attributes:
+<tagname attr=value attr=value>Content</tagname>
+
+
+
+
+
+
+
+

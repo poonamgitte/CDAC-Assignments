@@ -1,0 +1,6 @@
+1.Create a todo list app by the react and express app.User should be able to add, fetch and delete a todo item.
+Fields : taskName , dueDate
+
+Optional:
+1.Add one field "status" with only two values [Done, Rejected]
+-> Implement the status update api in the backend too to update status from the frontend.

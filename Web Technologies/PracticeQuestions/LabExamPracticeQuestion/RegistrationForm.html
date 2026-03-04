@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.8/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid black;
+            background-color: rgb(64, 212, 64);
+            padding: 2em;
+
+        
+    min-height: 100vh;        /* full viewport height */
+    background-color: rgb(64, 212, 64);
+    margin: 0;
+        }
+
+        h2{
+            color: white;
+            margin-bottom: 1em;
+        }
+        .form {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            /* or center */
+            /* width: 600px; */
+            padding: 2em;
+            /* spacing around all sides */
+            gap: 1em;
+            /* spacing between form elements */
+            background-color: white;
+            /* box-shadow: 0px 4px 10px grey; */
+
+        }
+
+        /* input{
+            border-radius: 3px;
+        } */
+    </style>
+
+
+</head>
+
+<body>
+
+    <div class="row">
+
+        <h2>Seminar Registration Form</h2>
+    </div>
+
+        <form class="form shadow">
+            <div>
+
+                <b>Participant name:</b>
+                <select id="salutation" required>
+                    <option value="">Title</option>
+                    <option value="Mr">Mr</option>
+                    <option value="Miss">Miss</option>
+                    <option value="other">other</option>
+                </select>
+
+                <input type="text" name="first-name" placeholder="First Name" required>
+                <input type="text" name="last-name" placeholder="Last Name" required>
+            </div>
+
+            <div>
+
+                <b>Email-ID:</b> <input type="email" id="email" required>
+            </div>
+
+            <div>
+
+                <b>Confirmed Email-ID:</b> <input type="email" id="confirmedEmail" required>
+            </div>
+
+            <div>
+                <b>Seminar:</b>
+                <select id="seminar" required>
+                    <option value="SOA">SOA</option>
+                    <option value="Design-Pattern">Design Patterns</option>
+                    <option value="Business-Intelligence">Business Intelligence</option>
+                </select>
+            </div>
+
+            <div>
+                <b>Level :</b>
+                <input type="radio" name="level" value="industry" id="industry" required>
+                <label for="industry">Industry</label>
+
+                <input type="radio" name="level" value="intermediate" id="intermediate" required>
+                <label for="intermediate">Intermediate</label>
+
+                <input type="radio" name="level" value="advanced" id="advanced" required>
+                <label for="advanced">Advanced</label>
+
+            </div>
+
+            <div>
+
+                <button class="btn btn-outline-success" type="button" onclick=calculateTrainingCost(event)>Calculate
+                    Training Cost</button>
+            </div>
+
+            <div>
+
+                <b>Cost of Seminar:</b> <input type="text" id="seminarCost" value="" readonly>
+            </div>
+
+            <div>
+
+                <button class="btn btn-outline-success" type="button" onclick=displayDetails()>Display Details</button>
+                
+                <button class="btn btn-success" type="button" onclick=validateForm(event)>Submit</button>
+            </div>
+
+        </form>
+    
+
+
+
+    <script>
+
+        // lookup object
+        let selectedCost = {
+            "SOA": {
+                "industry": 2500,
+                "intermediate": 3500,
+                "advanced": 6000
+            },
+            "Design-Pattern": {
+                "industry": 4000,
+                "intermediate": 5500,
+                "advanced": 8000
+            },
+            "Business-Intelligence": {
+                "industry": 5000,
+                "intermediate": 7000,
+                "advanced": 10000
+            }
+        }
+
+        function calculateTrainingCost(event) {
+            event.preventDefault()
+
+            let seminar = document.getElementById("seminar").value;
+
+            let level = document.getElementsByName("level");
+
+            let selectedLevel = ""
+
+            for (let i = 0; i < level.length; i++) {
+
+                if (level[i].checked) {
+                    selectedLevel = level[i].value;
+                }
+            }
+
+            console.log(seminar)
+            console.log(selectedLevel)
+
+            // selected cost using lookup object
+
+            let cost = selectedCost[seminar][selectedLevel];
+
+            document.getElementById("seminarCost").value = cost
+            // console.log(s)
+        }
+
+
+        // validate form
+        function validateForm(event) {
+            event.preventDefault()
+
+            let email = document.getElementById("email").value;
+            let confirmedEmail = document.getElementById("confirmedEmail").value;
+
+            // email validation
+            if (!email.includes('@') || !email.includes('.') || email.indexOf('@') > email.lastIndexOf('.')) {
+                alert("invalid email format")
+                return
+            }
+
+            console.log(email, confirmedEmail)
+
+            if (email !== confirmedEmail) {
+                alert("Email and confirmed email not matched")
+                return;
+            }
+
+            alert("All data entered correctly")
+        }
+
+        // display details
+        function displayDetails() {
+
+            let salutation = document.getElementById("salutation").value;
+            let fName = document.getElementsByName("first-name")[0].value;
+            let lName = document.getElementsByName("last-name")[0].value;
+
+            let fullName = salutation + " " + fName + " " + lName;
+
+            let email = document.getElementById("email").value;
+            let seminar = document.getElementById("seminar").value;
+
+            let level = document.getElementsByName("level");
+
+            let selectedLevel = ""
+
+            for (let i = 0; i < level.length; i++) {
+
+                if (level[i].checked) {
+                    selectedLevel = level[i].value;
+                }
+            }
+
+            let seminarCost = document.getElementById("seminarCost").value;
+
+
+            // opening new window to show data on it
+            let detailsWindow = window.open("", "Participant details", "width=400px, height=400ps");
+            detailsWindow.document.write(`<h2>Participant details</h2>`)
+            detailsWindow.document.write(`<p>Full name: ${fullName}</p>`)
+            detailsWindow.document.write(` <p>Email: ${email}</p>`)
+            detailsWindow.document.write(`   <p>Seminar: ${seminar}</p>`)
+            detailsWindow.document.write(`<p>Level: ${selectedLevel}</p>`)
+            detailsWindow.document.write(`  <p>Cost of seminar: ${seminarCost}</p>`)
+        }
+    </script>
+
+</body>
+
+</html>

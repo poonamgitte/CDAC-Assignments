@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div class="container">
+    
+
+            <h2>Enter movies details</h2>
+
+            Enter Movie Name<input type="text" id="name"><br><br>
+            Enter Price<input type="Number" id="price"><br><br>
+            Enter Seat Number<input type="Number" id="seat"><br><br>
+            <button onclick="addToList()">ADD</button><br><br><br>
+
+            <table border="1" >
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Price</th>
+                        <th>Seat No</th>
+                    </tr>
+                </thead>
+                <tbody id="table">
+
+                </tbody >
+            </table>
+         
+            
+           
+            <script>
+                function addToList(){
+                    let name=document.getElementById("name").value;
+                    let price=document.getElementById("price").value;
+                    let seat=document.getElementById("seat").value;
+
+                    console.log(name);
+
+                    document.getElementById("table").innerHTML += `<tr>
+                                                                <td>${name}</td>
+                                                                 <td>${price}</td>
+                                                                  <td>${seat}</td>
+                                                                  </tr>`
+                    
+
+                }
+            </script>
+
+
+    </div>
+</body>
+</html>
