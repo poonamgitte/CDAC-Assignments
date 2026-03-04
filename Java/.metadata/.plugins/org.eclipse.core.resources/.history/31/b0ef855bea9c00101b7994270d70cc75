@@ -1,0 +1,10 @@
+
+import java.util.*;
+
+public class GetInput {
+	//Integer input
+		static int getInteger() {
+			int num = Integer.parseInt(getString());
+			return num;
+		}
+}

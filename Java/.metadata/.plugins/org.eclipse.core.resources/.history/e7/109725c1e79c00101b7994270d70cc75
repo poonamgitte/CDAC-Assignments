@@ -1,0 +1,37 @@
+
+public class ConsoleInput {
+	static int getInteger(String objString) {
+		//Integer input
+		int num = Integer.parseInt(objString);
+		
+		return num;
+	}
+	
+		public static void main(String args[]) {
+			
+			try {
+					byte[] arrInput = new byte[100];
+					
+					System.out.println("Enter the name:");
+					
+					int length=System.in.read(arrInput);
+					
+					byte[] arrFinal = new byte[length-2];
+					
+					System.arraycopy(arrInput, 0, arrFinal, 0, length-2);
+					
+					//string input
+					String objString = new String(arrFinal);
+					
+				    System.out.println(objString);
+					
+					int num=getInteger(objString);
+				
+					System.out.println(num);
+					
+			}catch(Exception e){
+				e.printStackTrace();
+		    }
+		}
+		
+}

@@ -1,0 +1,36 @@
+
+public class Addintegers {
+	
+	
+	static void acceptArr(int size,int[] arr) {
+		
+		
+		for(int i=0;i<size;i++) {
+			System.out.println("Enter the value:");
+			 arr[i]=ConsoleInput.getInteger();
+	}
+	}
+	static int additionArr(int size,int[] arr) {
+		int result=0;
+		for(int i=0;i<size;i++) {
+			
+			result += arr[i];
+		}
+		return result;
+	}
+	public static void main(String[] args) {
+		
+		
+	
+		System.out.println("Enter the number of ineteger values you wish to add:");
+		int size = ConsoleInput.getInteger();
+		
+		int[] arr= new int[size];
+		
+		acceptArr(size,arr);
+		
+		System.out.println("Toatl of above values:"+additionArr(size,arr));
+		
+		
+	}
+}

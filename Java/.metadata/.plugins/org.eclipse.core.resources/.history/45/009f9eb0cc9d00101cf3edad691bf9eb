@@ -1,0 +1,13 @@
+
+public class Entry {
+	public static void main(String[] args) {
+		
+		Date objDate = new Date();
+		
+		System.out.println("Enter date:");
+		objDate.acceptDate();
+		
+		System.out.println("Date is:");
+		objDate.displayDate();
+	}
+}

@@ -1,0 +1,126 @@
+
+public class Calculator {
+	
+	public int add(int num1, int num2) {
+		return num1+num2;
+	}
+	
+	public float add(float num1, float num2) {
+		return num1+num2;
+	}
+	
+	public int subtract(int num1, int num2) {
+		return num1-num2;
+	}
+	
+	public float subtract(float num1, float num2) {
+		return num1+num2;
+	}
+	
+	public int multiply(int num1, int num2) {
+		return num1*num2;
+	}
+	
+	public float multiply(float num1, float num2) {
+		return num1+num2;
+	}
+	
+	
+	public int divide(int num1, int num2) {
+		return num1/num2;
+	}
+	
+	public float divide(float num1, float num2) {
+		return num1+num2;
+	}
+	
+	
+	public static void main(String[] args) {
+		int choice;
+		int num1, num2;
+		float n1,n2;
+		
+		do {
+			Calculator c = new Calculator();
+			
+			System.out.println("1.Add two integer");
+			System.out.println("2.Subtract two integer");
+			System.out.println("3.Multiply two integer");
+			System.out.println("4.Divide two integer");
+			System.out.println("5.Add two Float");
+			System.out.println("6.Subtract two Float");
+			System.out.println("7.Multiply two Float");
+			System.out.println("8.Divide two float");
+			System.out.println("9. Exit");
+			
+			
+			System.out.println("Enter choice");
+			choice = ConsoleInput.getInteger();
+			
+			System.out.println("Enter choice for number \n1.Integer \n2.Float");
+			int ch = ConsoleInput.getInteger();
+			
+			System.out.println("Enter 2 numbers");
+			if(ch == 1) {
+				num1 = ConsoleInput.getInteger();
+				num2 = ConsoleInput.getInteger();
+			}
+			else {
+				n1 = ConsoleInput.getFloat();
+				n2 = ConsoleInput.getFloat();
+			}
+			
+			
+			
+			switch(choice) {
+				case 1:{
+					System.out.println("Addition:"+c.add(num1, num2));
+					}
+					break;
+				case 2:{
+					
+					System.out.println("Addition:"+c.subtract(num1, num2));
+					}
+					break;
+				case 3:{
+				
+					System.out.println("Addition:"+c.multiply(num1, num2));
+					}
+					break;
+				case 4:{
+					
+					if(num2 == 0) {
+						System.out.println("Division by zero not possible");
+					}
+					else {
+						System.out.println("Addition:"+c.divide(num1, num2));						
+					}
+					}
+				case 5:{
+					System.out.println("Addition:"+c.add(num1, num2));
+					}
+					break;
+				case 6:{
+					System.out.println("Addition:"+c.subtract(n1, n2));
+					}
+					break;
+				case 7:{
+					System.out.println("Addition:"+c.multiply(n1, n2));
+					}
+					break;
+				case 8:{
+					if(n2 == 0) {
+						System.out.println("Division by zero not possible");
+					}
+					else {
+						System.out.println("Addition:"+c.divide(n1, n2));						
+					}
+				}
+				
+				break;
+			
+			}
+		}while(choice !=7);
+		
+	}
+}
